@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3578643225C46BE9000DA0FD /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3578643125C46BE9000DA0FD /* Bundle-Decodable.swift */; };
+		3578643F25C47BA8000DA0FD /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3578643E25C47BA8000DA0FD /* Mission.swift */; };
 		358EAA2425C3139F007244D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358EAA2325C3139F007244D7 /* AppDelegate.swift */; };
 		358EAA2625C3139F007244D7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358EAA2525C3139F007244D7 /* SceneDelegate.swift */; };
 		358EAA2825C3139F007244D7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358EAA2725C3139F007244D7 /* ContentView.swift */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		3578643125C46BE9000DA0FD /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
+		3578643E25C47BA8000DA0FD /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
 		358EAA2025C3139F007244D7 /* Moonshot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moonshot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		358EAA2325C3139F007244D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		358EAA2525C3139F007244D7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				358EAA2E25C313A6007244D7 /* Preview Content */,
 				358EAA6E25C33323007244D7 /* Astronaut.swift */,
 				3578643125C46BE9000DA0FD /* Bundle-Decodable.swift */,
+				3578643E25C47BA8000DA0FD /* Mission.swift */,
 			);
 			path = Moonshot;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				358EAA6F25C33323007244D7 /* Astronaut.swift in Sources */,
 				358EAA2625C3139F007244D7 /* SceneDelegate.swift in Sources */,
 				358EAA2825C3139F007244D7 /* ContentView.swift in Sources */,
+				3578643F25C47BA8000DA0FD /* Mission.swift in Sources */,
 				3578643225C46BE9000DA0FD /* Bundle-Decodable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
