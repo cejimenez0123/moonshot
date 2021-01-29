@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     let astronauts = Bundle.main.decode("assets/astronauts.json")
+    let missions = Bundle.main.decode("assets/missions.json")
     var body: some View {
         VStack{
         Text("Hello, world!")
