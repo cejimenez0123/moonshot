@@ -13,8 +13,8 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List(missions) { mission in
-                NavigationLink(destination: Text("Detail view")) {
-                    Image(mission.image)
+                NavigationLink(destination: MissionView(mission: mission, astronauts: self.astronauts)) {
+                    Image("assets/Images/\(mission.image)")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 44, height: 44)
