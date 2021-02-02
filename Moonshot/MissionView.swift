@@ -12,8 +12,22 @@ struct MissionView: View {
     var astronauts: [CrewMember]
     struct CrewMember{
         let role:String
-        let astronaut:String
+        let astronaut:Astronaut
     }
+    init(mission: Mission,astronauts:[Astronaut]){
+    self.mission = mission
+    var matches = [CrewMember]()
+    for member in mission.crew {
+           if let match = astronauts.first(where: { $0.id == member.name }) {
+            print(match)
+            matches.append(CrewMember(role: member.role, astronaut: match))
+           } else {
+               fatalError("Missing \(member)")
+           }
+       }
+
+       self.astronauts = matches
+   }
     var body: some View {
                GeometryReader { geometry in
                    ScrollView(.vertical) {
@@ -27,27 +41,26 @@ struct MissionView: View {
                            Text(self.mission.description)
                                .padding()
 
-                           Spacer(minLength: 25)
-                       }
-                   }
-               }
-               .navigationBarTitle(Text(mission.displayName), displayMode: .inline)
-           }
-    init(mission: Mission,astronauts:[Astronaut]){
-        self.mission = mission
-        var matches = [CrewMember]()
-        for member in mission.crew {
-               if let match = astronauts.first(where: { $0.id == member.name }) {
-                print(match)
-                matches.append(CrewMember(role: member.role, astronaut: match.name))
-               } else {
-                   fatalError("Missing \(member)")
-               }
-           }
+                        ForEach(self.astronauts, id: \.role) { crewMember in
+                            HStack {
+                                Image(crewMember.astronaut.id)
+                                    .resizable()
+                                    .frame(width: 83, height: 60)
+                                    .clipShape(Capsule())
+                                    .overlay(Capsule().stroke(Color.primary, lineWidth: 1))
 
-           self.astronauts = matches
-       }
-}
+                                VStack(alignment: .leading) {
+                                    Text(crewMember.astronaut.name)
+                                        .font(.headline)
+                                    Text(crewMember.role)
+                                        .foregroundColor(.secondary)
+                                }
+                                
+                            }}}
+               .navigationBarTitle(Text(mission.displayName), displayMode: .inline)
+                   }}
+        
+    }}
 
 
 struct MissionView_Previews: PreviewProvider {
