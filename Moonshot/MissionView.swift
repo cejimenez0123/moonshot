@@ -42,26 +42,35 @@ struct MissionView: View {
                                .padding()
 
                         ForEach(self.astronauts, id: \.role) { crewMember in
-                            HStack {
-                                Image(crewMember.astronaut.id)
-                                    .resizable()
-                                    .frame(width: 83, height: 60)
-                                    .clipShape(Capsule())
-                                    .overlay(Capsule().stroke(Color.primary, lineWidth: 1))
+                            NavigationLink(destination: AstronautView(astronaut: crewMember.astronaut)) {
+                                HStack {
+                                    Image(crewMember.astronaut.id)
+                                        .resizable()
+                                        .frame(width: 83, height: 60)
+                                        .clipShape(Capsule())
+                                        .overlay(Capsule().stroke(Color.primary, lineWidth: 1))
 
-                                VStack(alignment: .leading) {
-                                    Text(crewMember.astronaut.name)
-                                        .font(.headline)
-                                    Text(crewMember.role)
-                                        .foregroundColor(.secondary)
+                                    VStack(alignment: .leading) {
+                                        Text(crewMember.astronaut.name)
+                                            .font(.headline)
+                                        Text(crewMember.role)
+                                            .foregroundColor(.secondary)
+                                    }
+
+                                    Spacer()
                                 }
-                                
-                            }}}
-               .navigationBarTitle(Text(mission.displayName), displayMode: .inline)
-                   }}
-        
-    }}
+                                .padding(.horizontal)
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                        }
 
+                        Spacer(minLength: 25)
+                    }
+                }
+            }
+            .navigationBarTitle(Text(mission.displayName), displayMode: .inline)
+        }
+    }
 
 struct MissionView_Previews: PreviewProvider {
     static let missions: [Mission] = Bundle.main.decode("assets/missions.json")
