@@ -16,6 +16,11 @@ struct MissionView: View {
     }
     init(mission: Mission,astronauts:[Astronaut]){
     self.mission = mission
+//        var launchDate: String{
+//            let formatter = DateFormatter()
+//            formatter.locale=Locale(identifier: "en_US")
+//            return formatter.string(from: self.mission.formattedaunchDate)
+//        }
     var matches = [CrewMember]()
     for member in mission.crew {
            if let match = astronauts.first(where: { $0.id == member.name }) {
@@ -37,7 +42,9 @@ struct MissionView: View {
                                .scaledToFit()
                                .frame(maxWidth: geometry.size.width * 0.7)
                                .padding(.top)
-
+                       
+                        Text("\(self.mission.formattedLaunchDate)")
+                            .padding()
                            Text(self.mission.description)
                                .padding()
 
